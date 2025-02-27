@@ -9,6 +9,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> 
   <title>Coming Soon | Archive Grim</title> 
   <style> 
+    @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+    
     * { 
       margin: 0; 
       padding: 0; 
@@ -30,8 +32,9 @@
       width: 100%; 
       height: 100%; 
       background-image: url('image.jpg'); /* Replace with your image URL when you have it */ 
-      background-size: cover; 
+      background-size: contain; 
       background-position: center; 
+      background-repeat: no-repeat;
       filter: brightness(0.7); 
       z-index: -1; 
     } 
@@ -54,11 +57,10 @@
       backdrop-filter: blur(5px); 
     } 
     .logo { 
+      font-family: 'UnifrakturMaguntia', cursive;
       font-size: 3rem; 
-      font-weight: 700; 
-      letter-spacing: 3px; 
+      letter-spacing: 2px; 
       margin-bottom: 20px; 
-      text-transform: uppercase; 
     } 
     h1 { 
       font-size: 2rem; 
