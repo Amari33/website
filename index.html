@@ -1,1 +1,183 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Additional mobile optimization --> <meta name="theme-color" content="#000000"> <meta name="apple-mobile-web-app-capable" content="yes"> <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> <title>Coming Soon | Archive Grim</title> <style> * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Arial, sans-serif; } body { height: 100vh; display: flex; justify-content: center; align-items: center; position: relative; color: white; } .background { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('image.jpg'); /* Replace with your image URL when you have it */ background-size: cover; background-position: center; filter: brightness(0.7); z-index: -1; } .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: -1; } .container { width: 90%; max-width: 600px; background-color: rgba(0, 0, 0, 0.7); padding: 40px; border-radius: 10px; text-align: center; backdrop-filter: blur(5px); } .logo { font-size: 3rem; font-weight: 700; letter-spacing: 3px; margin-bottom: 20px; text-transform: uppercase; } h1 { font-size: 2rem; margin-bottom: 20px; } p { font-size: 1.1rem; margin-bottom: 30px; line-height: 1.5; } .signup-form { display: flex; flex-direction: column; gap: 15px; } input { padding: 15px; border: none; border-radius: 5px; font-size: 1rem; -webkit-appearance: none; appearance: none; } button { padding: 15px; background-color: #ff4d4d; /* Change to match your brand color */ color: white; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; transition: background-color 0.3s; } button:hover { background-color: #ff3333; } .confirmation { display: none; margin-top: 15px; color: #4CAF50; } @media (max-width: 768px) { .container { padding: 25px; width: 95%; max-width: 450px; } .logo { font-size: 2.2rem; margin-bottom: 15px; } h1 { font-size: 1.5rem; margin-bottom: 15px; } p { font-size: 1rem; margin-bottom: 20px; } input, button { padding: 16px; font-size: 1.1rem; } } </style> </head> <body> <div class="background"></div> <div class="overlay"></div> <div class="container"> <div class="logo">Archive grim</div> <h1>Something amazing is coming</h1> <p>Testing</p> <div class="signup-form"> <input type="email" id="email" placeholder="Your email address" required> <input type="tel" id="phone" placeholder="Your phone number (for SMS updates)" required> <button id="submit-btn">Get Early Access</button> <p class="confirmation" id="confirmation-msg">Thank you! You're on the list.</p> </div> </div> <script> document.getElementById('submit-btn').addEventListener('click', function() { const email = document.getElementById('email').value; const phone = document.getElementById('phone').value; if(email && phone) { // Here you would normally send this data to your server or a service like Mailchimp // For this demo, we'll just show the confirmation message document.getElementById('confirmation-msg').style.display = 'block'; // In a real implementation, you'd use AJAX to submit the form: // fetch('your-endpoint', { // method: 'POST', // headers: { 'Content-Type': 'application/json' }, // body: JSON.stringify({ email, phone }) // }).then(response => { // if(response.ok) document.getElementById('confirmation-msg').style.display = 'block'; // }); // Clear the inputs document.getElementById('email').value = ''; document.getElementById('phone').value = ''; // You could also store emails in browser storage temporarily // localStorage.setItem('subscribedEmails', JSON.stringify([...JSON.parse(localStorage.getItem('subscribedEmails') || '[]'), email])); } }); </script> </body> </html>
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+  <!-- Additional mobile optimization --> 
+  <meta name="theme-color" content="#000000"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> 
+  <title>Coming Soon | Archive Grim</title> 
+  <style> 
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+      font-family: 'Helvetica Neue', Arial, sans-serif; 
+    } 
+    body { 
+      height: 100vh; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      position: relative; 
+      color: white; 
+    } 
+    .background { 
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%; 
+      background-image: url('image.jpg'); /* Replace with your image URL when you have it */ 
+      background-size: cover; 
+      background-position: center; 
+      filter: brightness(0.7); 
+      z-index: -1; 
+    } 
+    .overlay { 
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%; 
+      background-color: rgba(0, 0, 0, 0.5); 
+      z-index: -1; 
+    } 
+    .container { 
+      width: 90%; 
+      max-width: 600px; 
+      background-color: rgba(0, 0, 0, 0.7); 
+      padding: 40px; 
+      border-radius: 10px; 
+      text-align: center; 
+      backdrop-filter: blur(5px); 
+    } 
+    .logo { 
+      font-size: 3rem; 
+      font-weight: 700; 
+      letter-spacing: 3px; 
+      margin-bottom: 20px; 
+      text-transform: uppercase; 
+    } 
+    h1 { 
+      font-size: 2rem; 
+      margin-bottom: 20px; 
+    } 
+    p { 
+      font-size: 1.1rem; 
+      margin-bottom: 30px; 
+      line-height: 1.5; 
+    } 
+    .signup-form { 
+      display: flex; 
+      flex-direction: column; 
+      gap: 15px; 
+    } 
+    input { 
+      padding: 15px; 
+      border: none; 
+      border-radius: 5px; 
+      font-size: 1rem; 
+      -webkit-appearance: none; 
+      appearance: none; 
+    } 
+    button { 
+      padding: 15px; 
+      background-color: #ff4d4d; /* Change to match your brand color */ 
+      color: white; 
+      border: none; 
+      border-radius: 5px; 
+      font-size: 1rem; 
+      cursor: pointer; 
+      font-weight: bold; 
+      text-transform: uppercase; 
+      letter-spacing: 1px; 
+      transition: background-color 0.3s; 
+    } 
+    button:hover { 
+      background-color: #ff3333; 
+    } 
+    .confirmation { 
+      display: none; 
+      margin-top: 15px; 
+      color: #4CAF50; 
+    } 
+    @media (max-width: 768px) { 
+      .container { 
+        padding: 25px; 
+        width: 95%; 
+        max-width: 450px; 
+      } 
+      .logo { 
+        font-size: 2.2rem; 
+        margin-bottom: 15px; 
+      } 
+      h1 { 
+        font-size: 1.5rem; 
+        margin-bottom: 15px; 
+      } 
+      p { 
+        font-size: 1rem; 
+        margin-bottom: 20px; 
+      } 
+      input, button { 
+        padding: 16px; 
+        font-size: 1.1rem; 
+      } 
+    } 
+  </style> 
+</head> 
+<body> 
+  <div class="background"></div> 
+  <div class="overlay"></div> 
+  <div class="container"> 
+    <div class="logo">Archive grim</div> 
+    <h1>Something amazing is coming</h1> 
+    <p>Testing</p> 
+    
+    <!-- FormSpree form integration -->
+    <form 
+      action="https://formspree.io/f/mpwqgvpw"
+      method="POST"
+      class="signup-form"
+      id="signup-form"
+    >
+      <input type="email" name="email" placeholder="Your email address">
+      <input type="tel" name="phone" placeholder="Your phone number (for SMS updates)">
+      <button type="submit">Get Early Access</button>
+      <p class="confirmation" id="confirmation-msg">Thank you! You're on the list.</p>
+    </form>
+  </div> 
+  
+  <script> 
+    // Show confirmation message on successful form submission
+    document.getElementById('signup-form').addEventListener('submit', function(e) {
+      // FormSpree will handle the actual submission
+      // This is just for showing the confirmation message
+      const form = this;
+      
+      fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          document.getElementById('confirmation-msg').style.display = 'block';
+          form.reset();
+        }
+        return response.json();
+      })
+      .catch(error => {
+        // Handle error if needed
+      });
+      
+      // Prevent the default form submission to let the fetch handle it
+      e.preventDefault();
+    });
+  </script> 
+</body> 
+</html>
