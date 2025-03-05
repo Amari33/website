@@ -86,7 +86,7 @@
     } 
     button { 
       padding: 15px; 
-      background-color: #ff4d4d; /* Change to match your brand color */ 
+      background-color: #708090; /* Slate grey color */ 
       color: white; 
       border: none; 
       border-radius: 5px; 
@@ -98,7 +98,33 @@
       transition: background-color 0.3s; 
     } 
     button:hover { 
-      background-color: #ff3333; 
+      background-color: #5f6f7e; 
+    }
+    
+    .or-divider {
+      text-align: center;
+      font-weight: bold;
+      margin: 10px 0;
+      color: #ddd;
+      position: relative;
+    }
+    
+    .or-divider:before,
+    .or-divider:after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.2);
+      top: 50%;
+      width: 40%;
+    }
+    
+    .or-divider:before {
+      left: 0;
+    }
+    
+    .or-divider:after {
+      right: 0;
     } 
     .confirmation { 
       display: none; 
@@ -150,8 +176,11 @@
         padding: 16px; 
         font-size: 1rem;
         border-radius: 8px;
-        background-color: #ff3333;
+        background-color: #708090;
         box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      } 
+      button:hover {
+        background-color: #5f6f7e;
       } 
     }
     
@@ -198,11 +227,16 @@
         max-width: 450px;
         margin: 0 auto;
       }
+      .or-divider {
+        margin: 12px 0;
+        font-size: 1.1rem;
+        font-weight: bold;
+      }
       input {
         padding: 18px; 
         font-size: 1.1rem;
         border-radius: 6px;
-        margin-bottom: 12px;
+        margin-bottom: 0;
         background-color: rgba(255,255,255,0.9);
         box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
       }
@@ -210,7 +244,7 @@
         padding: 18px; 
         font-size: 1.1rem;
         border-radius: 6px;
-        background-color: #ff3333;
+        background-color: #708090;
         font-weight: bold;
         letter-spacing: 1px;
         box-shadow: 0 3px 6px rgba(0,0,0,0.3);
@@ -219,6 +253,7 @@
       button:hover {
         transform: translateY(-2px);
         box-shadow: 0 5px 10px rgba(0,0,0,0.4);
+        background-color: #5f6f7e;
       }
     }
     
@@ -272,11 +307,21 @@
         max-width: 550px;
         margin: 0 auto;
       }
+      .or-divider {
+        margin: 15px 0;
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+      }
+      .or-divider:before, 
+      .or-divider:after {
+        width: 45%;
+        height: 2px;
+      }
       input {
         padding: 18px 24px; 
         font-size: 1.1rem;
         border-radius: 4px;
-        margin-bottom: 15px;
+        margin-bottom: 0;
         background-color: rgba(255,255,255,0.9);
         transition: all 0.2s ease;
         box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
@@ -290,17 +335,17 @@
         padding: 18px 24px; 
         font-size: 1.15rem;
         border-radius: 4px;
-        background-color: #ff3333;
+        background-color: #708090;
         text-transform: uppercase;
         font-weight: bold;
         letter-spacing: 2px;
-        box-shadow: 0 4px 12px rgba(255,77,77,0.3);
+        box-shadow: 0 4px 12px rgba(112,128,144,0.3);
         transition: all 0.3s ease;
       } 
       button:hover {
         transform: translateY(-3px);
-        background-color: #ff2020;
-        box-shadow: 0 6px 18px rgba(255,77,77,0.4);
+        background-color: #5f6f7e;
+        box-shadow: 0 6px 18px rgba(112,128,144,0.4);
       }
     } 
   </style> 
@@ -310,7 +355,7 @@
   <div class="overlay"></div> 
   <div class="container"> 
     <div class="logo">Archive grim</div> 
-    <p>Testing</p> 
+    <p>For discounts, early access and promotions enter info below</p> 
     
     <!-- FormSpree form integration -->
     <form 
@@ -320,8 +365,9 @@
       id="signup-form"
     >
       <input type="email" name="email" placeholder="Your email address">
+      <div class="or-divider">OR</div>
       <input type="tel" name="phone" placeholder="Your phone number (for SMS updates)">
-      <button type="submit">Get Early Access</button>
+      <button type="submit">Submit</button>
       <p class="confirmation" id="confirmation-msg">Thank you! You're on the list.</p>
     </form>
   </div> 
