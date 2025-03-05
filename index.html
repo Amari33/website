@@ -44,7 +44,7 @@
       left: 0; 
       width: 100%; 
       height: 100%; 
-      background-color: rgba(0, 0, 0, 0.5); 
+      background-color: rgba(0, 0, 0, 0.2); /* Reduced opacity from 0.5 */
       z-index: -1; 
     } 
     .container { 
@@ -145,8 +145,8 @@
       } 
       .background {
         background-size: cover;
-        opacity: 0.8;
-        filter: brightness(0.6) contrast(1.2);
+        opacity: 1; /* Changed from 0.8 to 1 */
+        filter: brightness(0.7) contrast(1.2);
         position: fixed;
       }
       .logo { 
@@ -200,7 +200,7 @@
       .background {
         background-size: cover;
         background-position: center 20%;
-        filter: brightness(0.5) contrast(1.1);
+        filter: brightness(0.65) contrast(1.1); /* Increased brightness from 0.5 */
       }
       .logo { 
         font-size: 3rem; 
@@ -274,7 +274,7 @@
       .background {
         background-size: cover;
         background-position: center;
-        filter: brightness(0.4) contrast(1.2);
+        filter: brightness(0.65) contrast(1.2); /* Increased brightness from 0.4 */
         animation: subtle-zoom 30s infinite alternate ease-in-out;
       }
       @keyframes subtle-zoom {
@@ -355,7 +355,7 @@
   <div class="overlay"></div> 
   <div class="container"> 
     <div class="logo">Archive grim</div> 
-    <p>For discounts, early access and promotions enter info below</p> 
+    <p>Discounts, Early access to drops, promotions and more.</p> 
     
     <!-- FormSpree form integration -->
     <form 
