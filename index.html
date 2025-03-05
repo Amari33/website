@@ -26,13 +26,13 @@
       color: white; 
     } 
     .background { 
-      position: absolute; 
+      position: fixed; 
       top: 0; 
       left: 0; 
       width: 100%; 
       height: 100%; 
       background-image: url('image.jpg'); /* Replace with your image URL when you have it */ 
-      background-size: contain; /* Default to contain for mobile */
+      background-size: cover; /* Change to cover to fill the entire background */
       background-position: center; 
       background-repeat: no-repeat;
       filter: brightness(0.7); 
@@ -118,9 +118,10 @@
         border-radius: 15px;
       } 
       .background {
-        background-size: contain;
+        background-size: cover;
         opacity: 0.8;
         filter: brightness(0.6) contrast(1.2);
+        position: fixed;
       }
       .logo { 
         font-size: 2.2rem; 
@@ -309,7 +310,6 @@
   <div class="overlay"></div> 
   <div class="container"> 
     <div class="logo">Archive grim</div> 
-    <h1>Something amazing is coming</h1> 
     <p>Testing</p> 
     
     <!-- FormSpree form integration -->
@@ -404,5 +404,3 @@
   </script> 
 </body> 
 </html>
-
-Version 11 of 11
