@@ -50,7 +50,7 @@
     .container { 
       width: 90%; 
       max-width: 600px; 
-      background-color: rgba(0, 0, 0, 0.7); 
+      background-color: rgba(0, 0, 0, 0.6); /* Reduced opacity from 0.7 to 0.6 */
       padding: 40px; 
       border-radius: 10px; 
       text-align: center; 
@@ -140,7 +140,7 @@
         padding: 20px; 
         width: 92%; 
         max-width: 450px;
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgba(0, 0, 0, 0.65); /* Reduced from 0.8 */
         border-radius: 15px;
       } 
       .background {
@@ -193,7 +193,7 @@
         padding: 35px; 
         width: 80%; 
         max-width: 650px;
-        background-color: rgba(10, 10, 10, 0.75);
+        background-color: rgba(10, 10, 10, 0.6); /* Reduced from 0.75 */
         border-radius: 12px;
         box-shadow: 0 5px 25px rgba(0,0,0,0.3);
       } 
@@ -201,7 +201,6 @@
         background-size: contain;
         background-position: center 20%;
         filter: brightness(0.65) contrast(1.1);
-        animation: float 12s ease-in-out infinite, pulse 8s ease-in-out infinite;
       }
       .logo { 
         font-size: 3rem; 
@@ -267,7 +266,7 @@
         padding: 50px 60px; 
         width: 70%; 
         max-width: 900px;
-        background-color: rgba(10, 10, 10, 0.7);
+        background-color: rgba(10, 10, 10, 0.55); /* Reduced from 0.7 */
         border-radius: 8px;
         backdrop-filter: blur(8px);
         box-shadow: 0 10px 40px rgba(0,0,0,0.4);
@@ -276,25 +275,10 @@
         background-size: contain;
         background-position: center;
         filter: brightness(0.65) contrast(1.2);
-        animation: float 18s ease-in-out infinite, pulse 10s ease-in-out infinite, pan 25s ease-in-out infinite;
       }
-      /* Background image animation controls */
-    #animation-toggle {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      background-color: rgba(0, 0, 0, 0.5);
-      color: white;
-      border: none;
-      border-radius: 4px;
-      padding: 5px 10px;
-      font-size: 12px;
-      cursor: pointer;
-      z-index: 100;
-      opacity: 0.7;
-    }
-    #animation-toggle:hover {
-      opacity: 1;
+      @keyframes subtle-zoom {
+      0% { transform: scale(1.0); }
+      100% { transform: scale(1.05); }
     }
       .logo { 
         font-size: 4rem; 
@@ -387,9 +371,6 @@
     </form>
   </div> 
   
-  <!-- Animation toggle button -->
-  <button id="animation-toggle">Pause Animation</button>
-  
   <script> 
     // Show confirmation message on successful form submission
     document.getElementById('signup-form').addEventListener('submit', function(e) {
@@ -417,20 +398,6 @@
       
       // Prevent the default form submission to let the fetch handle it
       e.preventDefault();
-    });
-    
-    // Animation toggle functionality
-    const toggleButton = document.getElementById('animation-toggle');
-    const background = document.querySelector('.background');
-    
-    toggleButton.addEventListener('click', function() {
-      if (background.style.animationPlayState === 'paused') {
-        background.style.animationPlayState = 'running';
-        toggleButton.textContent = 'Pause Animation';
-      } else {
-        background.style.animationPlayState = 'paused';
-        toggleButton.textContent = 'Play Animation';
-      }
     });
     
     // Detect device type for additional optimization
